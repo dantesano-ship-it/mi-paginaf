@@ -1,0 +1,224 @@
+:root{
+  --bg:#f6f9fc;
+  --card:#ffffff;
+  --text:#0f1724;
+  --accent:#2b6cb0;
+  --muted:#6b7280;
+  --radius:12px;
+  --gap:18px;
+  font-family: 'Playfair Display', serif;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  padding:0;
+  color:var(--text);
+  background:linear-gradient(180deg,var(--bg),#ffffff);
+  overflow-x:hidden;
+}
+
+/* Fondo con imagen */
+body::before{
+  content:"";
+  position:fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background-image:url("img/imagen.jpg");
+  background-size:cover;
+  background-position:center;
+  z-index:-1;
+  filter:brightness(0.75);
+}
+
+.container{
+  max-width:1000px;
+  margin:0 auto;
+  padding:20px;
+}
+
+.site-header{
+  text-align:center;
+  padding:40px 0 20px 0;
+  color:white;
+}
+
+input#userName{
+  padding:10px;
+  font-size:16px;
+  border-radius:8px;
+  border: none;
+  margin-right:10px;
+}
+
+button.primary{
+  padding:10px 20px;
+  font-size:16px;
+  border:none;
+  border-radius:8px;
+  background:var(--accent);
+  color:white;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button.primary:hover{
+  background:#1e4e8c;
+}
+
+/* Botón audio */
+button#toggleAudio{
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  padding: 10px 15px;
+  font-size:16px;
+  border:none;
+  border-radius:8px;
+  background:#2b6cb0;
+  color:white;
+  cursor:pointer;
+  display: none;
+}
+
+/* Tarjetas de consejos */
+.card{
+  background: rgba(255,255,255,0.95);
+  border-radius:var(--radius);
+  padding:20px;
+  margin:30px 0;
+  box-shadow:0 6px 18px rgba(14,34,60,0.06);
+  opacity:0;
+  transform: translateY(30px);
+  transition:all 0.8s ease-in-out;
+}
+
+.card.visible{
+  opacity:1;
+  transform: translateY(0);
+}
+
+/* Tarjetas internas */
+.cards-container, .motivational-cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+
+.advice-card, .mot-card{
+  padding:15px;
+  border-radius:12px;
+  color:white;
+  font-weight:600;
+  font-size:16px;
+  animation: float 3s ease-in-out infinite alternate;
+}
+
+@keyframes float{
+  0%{transform:translateY(0px);}
+  100%{transform:translateY(-10px);}
+}
+
+.card-color1{background:#2b6cb0;}
+.card-color2{background:#38b2ac;}
+.card-color3{background:#d69e2e;}
+.card-color4{background:#e53e3e;}
+
+.mot-card1{background:#6b46c1;}
+.mot-card2{background:#d53f8c;}
+.mot-card3{background:#dd6b20;}
+.mot-card4{background:#3182ce;}
+
+/* Layout tipo revista */
+section.image-left, section.image-right{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:30px;
+}
+
+section.image-left img{
+  order:0;
+}
+
+section.image-right img{
+  order:1;
+}
+
+.text-content{
+  flex:1;
+  min-width:250px;
+  font-family:'Playfair Display', serif;
+}
+
+section img{
+  max-width:450px;
+  border-radius:12px;
+  flex:1;
+  box-shadow:0 4px 15px rgba(0,0,0,0.2);
+}
+
+ul{
+  padding-left:20px;
+  margin:10px 0;
+}
+
+ul li{
+  margin-bottom:10px;
+  font-size:16px;
+  line-height:1.6;
+}
+
+/* Animación scroll */
+.section-animated{
+  opacity:0;
+  transform:translateY(30px);
+  transition:0.8s ease-in-out;
+}
+
+.section-animated.visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* Video */
+video{
+  width:100%;
+  border-radius:12px;
+  .video-container{
+  display:flex;
+  flex-wrap:wrap;
+  gap:20px;
+  justify-content: center;
+}
+
+.single-video{
+  flex:1 1 400px;
+  text-align:center;
+}
+
+.single-video video{
+  width:100%;
+  max-width:450px;
+  border-radius:12px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.2);
+}
+}
+
+/* Estrellas */
+#starContainer .star{
+  position:absolute;
+  background:white;
+  border-radius:50%;
+  opacity:0.8;
+  animation-name:moveStar;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes moveStar{
+  0% {transform: translateY(0);}
+  100% {transform: translateY(100vh);}
+}

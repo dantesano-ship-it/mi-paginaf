@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SleepBalance — Revista de Sueño y Bienestar</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="starContainer"></div>
+  <div class="overlay"></div>
+
+  <button id="toggleAudio" class="primary hidden">🔇 Silenciar / Activar audio</button>
+
+  <header class="site-header">
+    <div class="container header-content">
+      <h1 id="userGreeting">¡Bienvenido! Escribe tu nombre para empezar:</h1>
+      <div id="nameInputContainer">
+        <input type="text" id="userName" placeholder="Tu nombre" />
+        <button id="startBtn" class="primary">Comenzar</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container hidden" id="mainContent">
+
+    <!-- Sección 1: Consejos generales -->
+    <section class="card section-animated">
+      <h2>Consejos para mejorar tu sueño</h2>
+      <div class="cards-container">
+        <div class="advice-card card-color1">
+          Mantén un horario constante: acuéstate y levántate a la misma hora todos los días.
+        </div>
+        <div class="advice-card card-color2">
+          Evita pantallas brillantes 30–60 min antes de dormir.
+        </div>
+        <div class="advice-card card-color3">
+          Crea un ambiente oscuro, silencioso y fresco.
+        </div>
+        <div class="advice-card card-color4">
+          Incorpora hábitos relajantes: lectura, meditación o respiración profunda.
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección 2: Relajación -->
+    <section class="card section-animated image-left">
+      <img src="img/relax.jpg" alt="Relajación" />
+      <div class="text-content">
+        <h2>Relájate y descansa</h2>
+        <p>Tomarte unos minutos de relajación antes de dormir mejora la calidad de tu sueño y reduce el estrés acumulado.</p>
+      </div>
+    </section>
+
+    <!-- Sección 3: Hábitos de sueño -->
+    <section class="card section-animated image-right">
+      <div class="text-content">
+        <h2>Hábitos de sueño saludables</h2>
+        <ul>
+          <li>Evita dormir tarde en días libres para no desregular tu reloj biológico.</li>
+          <li>No consumas cafeína después del mediodía.</li>
+          <li>Evita cenas pesadas antes de acostarte.</li>
+        </ul>
+      </div>
+      <img src="img/sleep_habits.jpg" alt="Hábitos de sueño" />
+    </section>
+
+    <!-- Sección 4: Motivación -->
+    <section class="card section-animated image-left">
+      <img src="img/motivational.jpg" alt="Motivación" />
+      <div class="text-content">
+        <h2>Frases motivadoras</h2>
+        <div class="motivational-cards" id="motivationalCards"></div>
+      </div>
+    </section>
+
+    <!-- Sección 5: Alimentación y ejercicio -->
+    <section class="card section-animated image-right">
+      <div class="text-content">
+        <h2>Alimentación y actividad física</h2>
+        <ul>
+          <li>Realiza actividad física diaria, pero no justo antes de dormir.</li>
+          <li>Hidrátate adecuadamente durante el día.</li>
+          <li>Consume frutas y verduras para mantener energía y bienestar.</li>
+        </ul>
+      </div>
+      <img src="img/healthy_lifestyle.jpg" alt="Saludable" />
+    </section>
+
+    <!-- Video al final -->
+    <section class="card section-animated">
+      <h2>Video de relajación</h2>
+      <video id="relaxVideo" src="img/relax1.mp4" autoplay loop muted controls></video>
+      <!-- Nuevo video agregado -->
+    <div class="single-video">
+      <h2>Escucha esto para desestresarte :3</h2>
+      <video src="img/ASMR.mp4" controls muted></video>
+    </div>
+  </div>
+    </section>
+
+    <!-- Sección 6: Conclusión -->
+    <section class="card section-animated image-left">
+      <img src="img/conclusion.jpg" alt="Conclusión" />
+      <div class="text-content">
+        <h2>Conclusión</h2>
+        <p id="finalMessage"></p>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
